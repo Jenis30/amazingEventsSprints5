@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../styles/style.css">
+  <title>pastevents|page</title>
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <nav class="navbar navbar-expand-lg container-header">
+        <div class="container">
+          <a class="navbar-brand" href="#"><img src="../images/amazing_brand.png" alt="logo" class="logo"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse navbar" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../../index.html">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./upcomingevents.html">UPCOMING <br> EVENTS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">PAST <br> EVENTS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./contact.html">CONTACT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./stats.html">STATS</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div>
+        <div id="carouselExampleDark" class="carousel carousel-dark slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+              aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4"
+              aria-label="Slide 5"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img src="../images/optional_banner_3.jpg" class=" container-images" alt="banner_3">
+              <div class="carousel-caption d-none d-md-block">
+                <h1>Past events</h1>
+  
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="../images/optional_banner_4.jpg" class="container-images" alt="banner_4">
+              <div class="carousel-caption d-none d-md-block">
+                <h1>Past events</h1>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="../images/optional_banner_5.jpg" class="container-images" alt="banner_5">
+              <div class="carousel-caption d-none d-md-block">
+                <h1>Past events </h1>
+              </div>
+            </div>
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img src="../images/optional_banner_1.jpg" class=" container-images" alt="banner_3">
+              <div class="carousel-caption d-none d-md-block">
+                <h1>Past events</h1>
+  
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="../images/food_fair.jpg" class="container-images" alt="banner_5">
+              <div class="carousel-caption d-none d-md-block">
+                <h1>Past events </h1>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+  
+      <section class="d-flex justify-content-between" id="lupa" >
+        <div class="container-checkbox" id="container-check" >
+         
+       
+          <div v-for="categoria of categorias" class="form-check">
+            <input class="form-check-input" type="checkbox" :value="categoria" :id="categoria"
+              v-model="checkSeleccionados" v-on:change="filtroCruzado">
+            <label class="form-check-label" :for="categoria"> {{categoria}}</label>
+          </div>
+         
+        </div>
+        <div class="lupa mx-3">
+          <input type="search" id="inputSearch" v-model="usuarioInput" v-on:keyup="filtroCruzado"/>
+          <label><i class="bi-search icono-lupa"></i>
+          </label>
+        </div>
+      </section>
+      <div class="container-card" id="container-tarjetas">
+        
+        <div v-if="eventos.length != 0" v-for="evento of filtrados" class="card" style="width: 16rem ">
+          <img v-bind:src="evento.image" class="card-img-top" :alt="evento.name">
+          <div class="card-body">
+            <h5 class="card-title">{{evento.name}}</h5>
+            <p class="card-text">{{evento.description}}</p>
+            <div class="contain-detailes">
+              <h3>$ {{evento.price}}</h3>
+              <a :href="`./details.html?serch=${evento._id}`" class="btn btn-dark">details</a>
+            </div>
+          </div>
+        </div>
+        <h4 v-else>Your event cannot be found</h4>
+    
+      </div>
+    </main>
+    <footer>
+      <div class="container-footer">
+        <img class="container-img" src="../images/instagram.png" alt="instagram">
+        <img class="container-img" src="../images/facebook.png" alt="facebook">
+        <img class="container-img" src="../images/whatsapp.png" alt="whatsapp">
+      </div>
+      <h6>COHORT 51</h6>
+    </footer>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="module" src="../script/pastEvents.js"></script>
+</body>
+
+</html>

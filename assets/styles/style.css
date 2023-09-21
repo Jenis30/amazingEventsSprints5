@@ -1,0 +1,303 @@
+
+body {
+    /* display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto; */
+    background-color: #e2e2e2;
+}
+
+header{
+    min-height: 10vh;
+}
+main{
+    min-height: 80vh;
+}
+
+footer{
+min-height: 10vh;
+}
+
+
+.logo {
+    width: 10rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+header {
+    background-color: #08efff;
+}
+
+.container-images {
+    width: 100vw;
+    height: 12rem;
+    object-fit: cover;
+    background-position: center;
+}
+
+h1 {
+    padding: 0.5rem;
+    background-color: #ffffff7e;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+}
+
+li {
+    margin-inline: 1rem;
+}
+
+.container-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+
+.lupa {
+    display: inline-flex;
+    align-items: center;
+    gap: 1px;
+}
+
+.contain-detailes {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container-card {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.container-img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.card-body {
+    height: 240px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} 
+
+.card{
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+
+
+h4 {
+    text-align: center;
+    padding: 0.5rem;
+}
+
+h5 {
+    text-align: center;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #08efff;
+    height: 8vh;
+    padding: 0rem 2rem;
+}
+
+.card-img-top {
+    height: 200px;
+    /* object-fit: cover; */
+} 
+
+
+#targeta-detalle {
+    margin: 2rem 0rem;
+    height: 40rem;
+}
+
+
+.card-text {
+    max-height: 10vh;
+}
+
+a {
+
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+}
+
+.card {
+    background-color: #fff4e5;
+}
+
+li :hover {
+    background-color: #fff4e5;
+    border: solid 1px black;
+    border-radius: 3px;
+}
+
+.container-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+textarea {
+    display: flex;
+    resize: none;
+    height: 11rem;
+    width: 15rem;
+}
+
+form {
+    /* width: 30%; */
+    padding: 1rem;
+    border: solid 2px black;
+    border-radius: 2rem;
+    background-color: #fff4e5
+}
+#lupa{
+    display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 1rem;
+   margin-bottom: 1rem;
+}
+
+btn-primary:hover {
+    color: black;
+}
+
+.btn-primary:hover a {
+    color: black;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #08efff;
+}
+
+.form-control {
+    border: 1px solid rgb(88, 88, 88);
+}
+
+.container-but {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 2rem;
+}
+
+.tabla {
+    width: 70%;
+    margin: 20px 1rem;
+    border-collapse: collapse;
+    border: 1px solid #000;
+}
+
+.tabla th {
+    background-color: #fff4e5;
+    color: #000;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.tabla td {
+    height: 3rem;
+    background-color: #fff;
+    color: #000;
+    padding: 0.5rem;
+    text-align: center;
+    border: 1px solid #000;
+}
+
+.container-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 3rem;
+    padding-top: 2rem;
+}
+
+.card-img-details {
+    width: 20rem;
+    height: 20rem;
+    padding-top: 3rem;
+}
+
+.card-texto {
+    display: flex;
+    flex-direction: column;
+    width: 14rem;
+    height: 4rem
+}
+
+
+.targeta {
+    display: flex;
+    gap: 2rem;
+    border: solid black 3px;
+    padding: 1rem;
+    background-color: #fff4e5;
+}
+
+.icono-lupa {
+    border: solid 1px black;
+    padding: 0.3rem;
+    background-color: #fff4e5;
+}
+
+@media (min-width: 768px) {
+    form {
+        padding: 4rem;
+    }
+
+    textarea {
+        width: 16.2rem;
+    }
+
+     #targeta-detalle {
+        display: flex !important;
+        flex-direction: row;
+        width: 30rem;
+        margin-top: 2rem;
+        margin-bottom: 14rem;
+        padding-bottom: 8rem;
+    }
+
+    #imagen-detalle {
+        width: 10rem;
+        height: 10rem;
+        object-fit: cover;
+    }
+
+    
+
+    .tabla {
+        margin: 2rem 0rem;
+        width: 50%;
+    }
+
+}
+
+@media (min-width: 391px){
+    #lupa{
+        display: flex;
+       flex-direction: column;
+       align-items: center;
+       
+    }
+   
+}
